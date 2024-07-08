@@ -1,10 +1,13 @@
 function highlightElement(element) {
-    element.classList.add('highlight');
-  
+    const border = document.createElement('div');
+    border.classList.add('border-animation');
+    element.appendChild(border);
+
+    // Удаляем границу после окончания анимации
     setTimeout(() => {
-      element.classList.remove('highlight');
+        element.removeChild(border);
     }, 1500);
-  }
+}
   
 
 function setCookie(cname, cvalue, exdays) {
@@ -26,37 +29,21 @@ function getCookie(name) {
 }
 
 document.getElementById("add_button").addEventListener("click", function() {
-    var key = document.getElementById("key_input").value;
-    var value = document.getElementById("value_input").value;
-
-    setCookie(key, value, 365);
-});
-
-document.getElementById("get_button").addEventListener("click", function() {
-    value_input = document.getElementById("value_input");
-    highlightElement(value_input);
-
-    var key = document.getElementById("key_input").value;
-    var result = getCookie(key);
-
-    value_input.value = result;
-    // alert(`Get ${key}: ${result}`);
-})
-document.getElementById("add_button").addEventListener("click", function(event) {
-    event.preventDefault();
     const key = document.getElementById("key_input").value;
     const value = document.getElementById("value_input").value;
 
     setCookie(key, value, 365);
-    // alert(`Set ${key} to ${value}`);
+    this.blur();
 });
 
-document.getElementById("get_button").addEventListener("click", function(event) {
-    event.preventDefault();
+document.getElementById("get_button").addEventListener("click", function() {
     const key = document.getElementById("key_input").value;
-    result = getCookie(key)
-    console.log(`Get ${key}: ${result}`); // alert(result);
-    document.getElementById("value_input").value = getCookie(key);
-    // alert(`Get ${key}: ${document.getElementById("value_input").value}`);
+    result = getCookie(key)ж
+
+    output = document.getElementById("value_input")ж
+    output.value = result;
+
+    highlightElement(output);
+    this.blur();
 });
 

@@ -145,8 +145,20 @@ body, html {
     background: var(--lt-color-green-active);
 }
 
-/* Добавляем анимацию */
-@keyframes highlight {
+
+.border-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    pointer-events: none;
+    border: 2px solid var(--lt-color-green-active);
+    animation: fadeOut 1.5s ease-in-out;
+}
+
+@keyframes fadeOut {
     0% {
         outline: none;
         outline-offset: 15px;
@@ -163,11 +175,6 @@ body, html {
         outline: 2px solid rgba(255, 255, 255, 0);
         outline-offset: 2px;
     }
-}
-
-/* Стиль для элемента с анимацией */
-.highlight {
-    animation: highlight 1.5s ease-in-out;
 }
 
 /* Адаптивные стили */
