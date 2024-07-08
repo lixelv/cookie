@@ -1,3 +1,12 @@
+function highlightElement(element) {
+    element.classList.add('highlight');
+  
+    setTimeout(() => {
+      element.classList.remove('highlight');
+    }, 1000);
+  }
+  
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -24,9 +33,13 @@ document.getElementById("add_button").addEventListener("click", function() {
 });
 
 document.getElementById("get_button").addEventListener("click", function() {
+    value_input = document.getElementById("value_input");
+    highlightElement(value_input);
+    
     var key = document.getElementById("key_input").value;
     var result = getCookie(key);
-    document.getElementById("value_input").value = result;
+
+    value_input.value = result;
     // alert(`Get ${key}: ${result}`);
 })
 document.getElementById("add_button").addEventListener("click", function(event) {

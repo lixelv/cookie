@@ -140,3 +140,22 @@ body, html {
 .login100-form-btn:active {
     background: rgb(87,184,70);
 }
+
+/* Добавляем анимацию */
+@keyframes highlight {
+    0% {
+      outline: none;
+    }
+    50% {
+      outline: 2px solid green;
+    }
+    100% {
+      outline: none;
+    }
+  }
+  
+  /* Стиль для элемента с анимацией */
+  .highlight {
+    animation: highlight 1s ease-in-out;
+  }
+  
