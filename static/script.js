@@ -3,7 +3,7 @@ function highlightElement(element) {
   
     setTimeout(() => {
       element.classList.remove('highlight');
-    }, 1000);
+    }, 2000);
   }
   
 
@@ -35,7 +35,7 @@ document.getElementById("add_button").addEventListener("click", function() {
 document.getElementById("get_button").addEventListener("click", function() {
     value_input = document.getElementById("value_input");
     highlightElement(value_input);
-    
+
     var key = document.getElementById("key_input").value;
     var result = getCookie(key);
 
