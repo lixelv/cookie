@@ -8,6 +8,8 @@
     --lt-color-gray-700: #2f3237;
     --lt-color-gray-800: #1d1e20;
     --lt-color-gray-900: #111213;
+    --lt-color-green-default: rgb(87,184,70, 0.8);
+    --lt-color-green-active: rgba(87,184,70);
     --lt-shadowDefault: 0 2px 6px -1px rgba(0, 0, 0, 0.16), 0 1px 4px -1px rgba(0, 0, 0, 0.04);
     --lt-shadowActive: 0 0 8px -2px rgba(0, 0, 0, 0.1), 0 6px 20px -3px rgba(0, 0, 0, 0.2);
     --lt-color-white: #fff !important;
@@ -134,23 +136,26 @@ body, html {
 }
 
 .login100-form-btn:hover {
-    background: rgba(87,184,70, 0.8);
+    background: var(--lt-color-green-default);
 }
 
 .login100-form-btn:active {
-    background: rgb(87,184,70);
+    background: var(--lt-color-green-active);
 }
 
 /* Добавляем анимацию */
 @keyframes highlight {
     0% {
-      outline: none;
-    }
-    50% {
-      outline: 2px solid green;
+        outline: none;
+        outline-offset: 6px;
+      }
+    20% {
+      outline: 2px solid var(--lt-color-green-active);
+      outline-offset: 2px;
     }
     100% {
       outline: none;
+      outline-offset: 2px;
     }
   }
   
