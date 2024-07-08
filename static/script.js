@@ -1,12 +1,11 @@
 function highlightElement(element) {
-    const border = document.createElement('div');
-    border.classList.add('border-animation');
-    element.appendChild(border);
+    // Сначала удалим класс, чтобы сбросить анимацию
+    element.classList.remove("highlight");
 
-    // Удаляем границу после окончания анимации
+    // Добавим класс с небольшой задержкой, чтобы сбросить анимацию
     setTimeout(() => {
-        element.removeChild(border);
-    }, 1500);
+        element.classList.add("highlight");
+    }, 10);
 }
   
 
@@ -28,15 +27,18 @@ function getCookie(name) {
     return null;
 }
 
-document.getElementById("add_button").addEventListener("click", function() {
+document.getElementById("add_button").addEventListener("click", function(event) {
+    event.preventDefault();
+
     const key = document.getElementById("key_input").value;
     const value = document.getElementById("value_input").value;
 
     setCookie(key, value, 365);
-    this.blur();
 });
 
-document.getElementById("get_button").addEventListener("click", function() {
+document.getElementById("get_button").addEventListener("click", function(event) {
+    event.preventDefault();
+
     const key = document.getElementById("key_input").value;
     result = getCookie(key);
 
@@ -44,6 +46,5 @@ document.getElementById("get_button").addEventListener("click", function() {
     output.value = result;
 
     highlightElement(output);
-    this.blur();
 });
 
