@@ -1,6 +1,6 @@
 # FastAPI Static Files Example
 
-Этот репозиторий демонстрирует, как использовать FastAPI для обслуживания HTML, CSS и JavaScript файлов. Проект включает простой пример веб-страницы, которая использует стили и скрипты, обслуживаемые FastAPI.
+Этот репозиторий демонстрирует, как использовать FastAPI для обслуживания HTML, CSS и JavaScript файлов. Проект включает простой пример веб-страницы, которая использует стили и скрипты, обслуживаемые FastAPI. Также вы можете посетить сайт по [этой ссылке]()
 
 ## Структура проекта
 
@@ -20,13 +20,13 @@ project/
 1. Клонируйте репозиторий:
 
 ```
-git clone https://github.com/your-username/FastAPI-Static-Files-Example.git
+git clone https://github.com/lixelv/cookie.git
 ```
 
 2. Перейдите в каталог проекта:
 
 ```
-cd FastAPI-Static-Files-Example
+cd cookie
 ```
 
 3. Установите необходимые зависимости:

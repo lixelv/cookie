@@ -1,3 +1,5 @@
+import aiofiles
+
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, FileResponse
 
@@ -6,8 +8,8 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root(request: Request):
-    with open("templates/index.html", "r") as f:
-        html = f.read()
+    async with aiofiles.open("templates/index.html", mode="r", encoding="utf-8") as f:
+        html = await f.read()
     return HTMLResponse(html)
 
 
