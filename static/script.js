@@ -38,9 +38,9 @@ document.getElementById("add_button").addEventListener("click", function() {
 
 document.getElementById("get_button").addEventListener("click", function() {
     const key = document.getElementById("key_input").value;
-    result = getCookie(key)ж
+    result = getCookie(key);
 
-    output = document.getElementById("value_input")ж
+    output = document.getElementById("value_input");
     output.value = result;
 
     highlightElement(output);
