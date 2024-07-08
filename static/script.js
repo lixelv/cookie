@@ -3,7 +3,7 @@ function highlightElement(element) {
   
     setTimeout(() => {
       element.classList.remove('highlight');
-    }, 2000);
+    }, 1500);
   }
   
 
