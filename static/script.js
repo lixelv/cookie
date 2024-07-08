@@ -34,6 +34,7 @@ document.getElementById("add_button").addEventListener("click", function(event) 
     const value = document.getElementById("value_input").value;
 
     setCookie(key, value, 365);
+    this.blur();
 });
 
 document.getElementById("get_button").addEventListener("click", function(event) {
@@ -46,5 +47,6 @@ document.getElementById("get_button").addEventListener("click", function(event) 
     output.value = result;
 
     highlightElement(output);
+    this.blur();
 });
 
