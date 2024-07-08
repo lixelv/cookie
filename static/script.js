@@ -6,7 +6,7 @@ function highlightElement(element) {
     setTimeout(() => {
         element.classList.add("highlight");
     }, 10);
-}
+};
   
 
 function setCookie(cname, cvalue, exdays) {
@@ -14,7 +14,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+};
 
 function getCookie(name) {
     const nameEQ = name + "=";
@@ -25,7 +25,7 @@ function getCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length);
     }
     return null;
-}
+};
 
 document.getElementById("add_button").addEventListener("click", function(event) {
     event.preventDefault();
@@ -34,7 +34,9 @@ document.getElementById("add_button").addEventListener("click", function(event) 
     const value = document.getElementById("value_input").value;
 
     setCookie(key, value, 365);
-    this.blur();
+    setTimeout(() => {
+        this.blur();
+    }, 1500);
 });
 
 document.getElementById("get_button").addEventListener("click", function(event) {
@@ -47,6 +49,8 @@ document.getElementById("get_button").addEventListener("click", function(event) 
     output.value = result;
 
     highlightElement(output);
-    this.blur();
+    setTimeout(() => {
+        this.blur();
+    }, 1500);
 });
 
