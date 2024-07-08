@@ -137,15 +137,6 @@ body, html {
     transition: background 0.3s;
 }
 
-.login100-form-btn:hover {
-    background: var(--lt-color-green-default);
-    animation: increaseSize 0.3s forwards;
-    transform: scale(1.1) 0.5s;
-}
-
-.login100-form-btn:active {
-    background: var(--lt-color-green-active);
-}
 
 @keyframes increaseSize {
     from {
@@ -155,6 +146,39 @@ body, html {
       transform: scale(1.1);
     }
   }
+
+@keyframes increaseSizeMobile {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      background: var(--lt-color-green-active);
+      transform: scale(1.1);
+    }
+    100% {
+      background: var(--lt-color-gray-700);
+      transform: scale(1);
+    }
+  }
+    
+
+@media(hover: hover) {
+    .login100-form-btn:hover {
+        background: var(--lt-color-green-default);
+        animation: increaseSize 0.3s forwards;
+        transform: scale(1.1) 0.5s;
+    }
+
+    .login100-form-btn:active {
+        background: var(--lt-color-green-active);
+    }
+}
+@media(hover: none) {
+    .login100-form-btn:focus {
+        animation: increaseSizeMobile 1s forwards;
+    }
+}
+
 
 /* Добавляем анимацию */
 @keyframes highlight {
