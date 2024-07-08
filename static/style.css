@@ -159,7 +159,7 @@ body, html {
     }
     100% {
       outline: 2px solid rgb(255, 255, 255, 0);
-      outline-offset: 15px;
+      outline-offset: 2px;
     }
   }
   
